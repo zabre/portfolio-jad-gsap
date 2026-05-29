@@ -11,124 +11,53 @@
   <!-- GSAP core + plugins -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrambleTextPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/MotionPathPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
 </head>
 <body>
 
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">JAD.</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="about.html">Qui suis-je ?</a></li>
+      <li><a href="projects.html">Mes projets</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
 
-  <!-- ScrollSmoother wrapper -->
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
+  <section class="hero">
+    <div class="hero-grid" id="heroGrid">
+      <div class="hero-cell tall" style="--delay:0s"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6718335390845095173" data-video-id="6718335390845095173" style="max-width:100%;min-width:0;"><section></section></blockquote></div>
+      <div class="hero-cell" style="--delay:0.08s"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000001/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div class="hero-cell" style="--delay:0.16s"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6745656850688466177" data-video-id="6745656850688466177" style="max-width:100%;min-width:0;"><section></section></blockquote></div>
+      <div class="hero-cell tall" style="--delay:0.24s"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000002/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div class="hero-cell" style="--delay:0.32s"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6950501452922954501" data-video-id="6950501452922954501" style="max-width:100%;min-width:0;"><section></section></blockquote></div>
+      <div class="hero-cell" style="--delay:0.4s"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000003/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div class="hero-cell tall" style="--delay:0.48s"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/7106594312292453634" data-video-id="7106594312292453634" style="max-width:100%;min-width:0;"><section></section></blockquote></div>
+      <div class="hero-cell" style="--delay:0.56s"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000004/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+    </div>
+    <div class="hero-overlay-dark"></div>
+    <div class="hero-text">
+      <span class="hero-the">The</span>
+      <h1 class="hero-title">CREATOR<br /><em>DE CONTENU</em></h1>
+    </div>
+  </section>
 
-      <!-- NAV -->
-      <nav class="navbar" id="navbar">
-        <div class="nav-logo" id="navLogo">JAD.</div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Accueil</a></li>
-          <li><a href="about.html">Qui suis-je ?</a></li>
-          <li><a href="projects.html">Mes projets</a></li>
-          <li><a href="contact.html">Me contacter</a></li>
-        </ul>
-      </nav>
-
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-grid" id="heroGrid">
-
-          <div class="hero-cell tall" style="--delay:0s">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6718335390845095173"
-              data-video-id="6718335390845095173" style="max-width:100%;min-width:0;">
-              <section></section>
-            </blockquote>
-          </div>
-
-          <div class="hero-cell" style="--delay:0.08s">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/C0000000001/"
-              data-instgrm-version="14" style="width:100%;"></blockquote>
-          </div>
-
-          <div class="hero-cell" style="--delay:0.16s">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6745656850688466177"
-              data-video-id="6745656850688466177" style="max-width:100%;min-width:0;">
-              <section></section>
-            </blockquote>
-          </div>
-
-          <div class="hero-cell tall" style="--delay:0.24s">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/C0000000002/"
-              data-instgrm-version="14" style="width:100%;"></blockquote>
-          </div>
-
-          <div class="hero-cell" style="--delay:0.32s">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/6950501452922954501"
-              data-video-id="6950501452922954501" style="max-width:100%;min-width:0;">
-              <section></section>
-            </blockquote>
-          </div>
-
-          <div class="hero-cell" style="--delay:0.4s">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/C0000000003/"
-              data-instgrm-version="14" style="width:100%;"></blockquote>
-          </div>
-
-          <div class="hero-cell tall" style="--delay:0.48s">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/7106594312292453634"
-              data-video-id="7106594312292453634" style="max-width:100%;min-width:0;">
-              <section></section>
-            </blockquote>
-          </div>
-
-          <div class="hero-cell" style="--delay:0.56s">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/C0000000004/"
-              data-instgrm-version="14" style="width:100%;"></blockquote>
-          </div>
-
-        </div>
-
-        <!-- SVG MotionPath décoratif -->
-        <svg class="deco-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <path id="decorPath" d="M 200 60 C 340 60, 380 200, 200 340 C 20 340, 60 200, 200 60 Z" fill="none" />
-        </svg>
-        <div class="deco-dot" id="decoDot"></div>
-
-        <div class="hero-overlay-dark"></div>
-
-        <div class="hero-text">
-          <span class="hero-the">The</span>
-          <h1 class="hero-title">CREATOR<br /><em>DE CONTENU</em></h1>
-        </div>
-      </section>
-
-      <!-- ABOUT TEASER -->
-      <section class="about-teaser">
-        <div class="about-teaser-inner">
-          <div class="about-portrait">
-            <div class="portrait-frame">
-              <div class="ph-img portrait-ph"></div>
-            </div>
-          </div>
-          <div class="about-copy">
-            <p class="about-tag">Ça, c'est moi Jad.</p>
-            <p class="about-body">Un étudiant en 5ème année de communication spécialisé en design digital. Mon parcours en alternance m'a permis de me concentrer sur la création de contenu pour divers clients, tout en n'oubliant pas les bases solides acquises à l'école.</p>
-            <p class="about-body">Aujourd'hui, fort de mon expérience en design digital et de ma spécialisation en création de contenu pour une variété de clients, je franchis le pas vers l'entrepreneuriat en tant que freelance.</p>
-            <a href="about.html" class="btn-blue gsap-magnet">En savoir plus →</a>
-          </div>
-        </div>
-      </section>
-
-    </div><!-- /smooth-content -->
-  </div><!-- /smooth-wrapper -->
+  <section class="about-teaser">
+    <div class="about-teaser-inner">
+      <div class="about-portrait">
+        <div class="portrait-frame"><div class="ph-img portrait-ph"></div></div>
+      </div>
+      <div class="about-copy">
+        <p class="about-tag">Ça, c'est moi Jad.</p>
+        <p class="about-body">Un étudiant en 5ème année de communication spécialisé en design digital. Mon parcours en alternance m'a permis de me concentrer sur la création de contenu pour divers clients, tout en n'oubliant pas les bases solides acquises à l'école.</p>
+        <p class="about-body">Aujourd'hui, fort de mon expérience en design digital et de ma spécialisation en création de contenu pour une variété de clients, je franchis le pas vers l'entrepreneuriat en tant que freelance.</p>
+        <a href="about.html" class="btn-blue gsap-magnet">En savoir plus →</a>
+      </div>
+    </div>
+  </section>
 
   <script async src="https://www.tiktok.com/embed.js"></script>
   <script async src="//www.instagram.com/embed.js"></script>

@@ -8,132 +8,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
 </head>
 <body class="page-about">
-
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-
-      <nav class="navbar" id="navbar">
-        <div class="nav-logo" id="navLogo">JAD.</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html" class="active">Qui suis-je ?</a></li>
-          <li><a href="projects.html">Mes projets</a></li>
-          <li><a href="contact.html">Me contacter</a></li>
-        </ul>
-      </nav>
-
-      <section class="page-hero">
-        <div class="page-hero-video-wrap">
-          <video class="hero-video" autoplay muted loop playsinline poster="assets/placeholder-about.jpg">
-            <source src="assets/about-reel.mp4" type="video/mp4" />
-          </video>
-          <div class="hero-overlay"></div>
-        </div>
-        <div class="page-hero-text">
-          <p class="page-eyebrow">The moroccan dreamer</p>
-          <h1 class="page-big-title">Qui<br/>suis-je ?</h1>
-        </div>
-      </section>
-
-      <section class="stats-bar">
-        <div class="stat-item">
-          <span class="stat-number" data-target="1000000">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label-bar">Vues cumulées</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="50">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label-bar">Projets livrés</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="3">0</span>
-          <span class="stat-suffix"></span>
-          <span class="stat-label-bar">Grandes entreprises</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="5">0</span>
-          <span class="stat-suffix">ans</span>
-          <span class="stat-label-bar">d'expérience</span>
-        </div>
-      </section>
-
-      <section class="timeline">
-
-        <div class="timeline-block blue">
-          <div class="tl-left">
-            <div class="tl-age">18–20<span>ans</span></div>
-            <div class="tl-content">
-              <h2 class="tl-title">Le commencement</h2>
-              <p>J'ai débuté mon parcours d'études à l'École Supérieure de Sup de Pub, où j'ai pu acquérir les bases essentielles du marketing et de la communication. Dès ma deuxième année, j'ai intégré l'équipe de Captain Skipper, une plateforme de location de bateaux entre particuliers. J'ai principalement travaillé sur la Direction Artistique — affiche, flyers, couverture du Salon Nautique de Paris.</p>
-            </div>
-          </div>
-          <div class="tl-photos">
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo tall gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-          </div>
-        </div>
-
-        <div class="timeline-block blue">
-          <div class="tl-left">
-            <div class="tl-age">20–21<span>ans</span></div>
-            <div class="tl-content">
-              <h2 class="tl-title">L'opportunité d'une vie</h2>
-              <p>En 2023, j'ai été sélectionné pour un stage de six mois chez Brut.IA — la branche IA du média international Brut. Journaliste et créateur de contenu au quotidien : trouver un sujet, écrire le script, monter la vidéo, publier. J'ai couvert VivaTech, interviewé J Balvin, réalisé des vidéos dépassant le million de vues.</p>
-            </div>
-          </div>
-          <div class="tl-photos">
-            <div class="tl-photo wide gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-          </div>
-        </div>
-
-        <div class="timeline-block blue">
-          <div class="tl-left">
-            <div class="tl-age">21–23<span>ans</span></div>
-            <div class="tl-content">
-              <h2 class="tl-title">Le lion qui rugit</h2>
-              <p>Créateur de contenu chez Publicis Sport. Gestion de Société Générale pour le rugby (équipe de France, TOP 14), allers-retours à Marcoussis, matchs partout en France. Pilotage du compte Football2gether à l'approche de la CAN, une semaine en Égypte pour la finale de la Ligue des champions africaine. Alternance terminée en préparant la CAN 2025 au Maroc.</p>
-            </div>
-          </div>
-          <div class="tl-photos">
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo tall gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo wide gsap-clip-reveal"><div class="ph-img"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img"></div></div>
-          </div>
-        </div>
-
-        <div class="timeline-block orange">
-          <div class="tl-left">
-            <div class="tl-age">L'avenir</div>
-            <div class="tl-content">
-              <h2 class="tl-title">Le projet d'une vie...</h2>
-              <p>Après le diplôme : une année pour développer Madi3ch (« ne gaspille pas » en arabe), une application anti-gaspillage inspirée de Too Good To Go, destinée au Maroc. Mettre à disposition chaque jour des paniers d'invendus pour lutter contre le gaspillage alimentaire.</p>
-            </div>
-          </div>
-          <div class="tl-photos">
-            <div class="tl-photo wide gsap-clip-reveal"><div class="ph-img orange-ph"></div></div>
-            <div class="tl-photo gsap-clip-reveal"><div class="ph-img orange-ph"></div></div>
-          </div>
-        </div>
-
-      </section>
-
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">JAD.</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html" class="active">Qui suis-je ?</a></li>
+      <li><a href="projects.html">Mes projets</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
+  <section class="page-hero">
+    <div class="page-hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/placeholder-about.jpg">
+        <source src="assets/about-reel.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
     </div>
-  </div>
-
+    <div class="page-hero-text">
+      <p class="page-eyebrow">The moroccan dreamer</p>
+      <h1 class="page-big-title">Qui<br/>suis-je ?</h1>
+    </div>
+  </section>
+  <section class="stats-bar">
+    <div class="stat-item"><span class="stat-number" data-target="1000000">0</span><span class="stat-suffix">+</span><span class="stat-label-bar">Vues cumulées</span></div>
+    <div class="stat-item"><span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span><span class="stat-label-bar">Projets livrés</span></div>
+    <div class="stat-item"><span class="stat-number" data-target="3">0</span><span class="stat-suffix"></span><span class="stat-label-bar">Grandes entreprises</span></div>
+    <div class="stat-item"><span class="stat-number" data-target="5">0</span><span class="stat-suffix">ans</span><span class="stat-label-bar">d'expérience</span></div>
+  </section>
+  <section class="timeline">
+    <div class="timeline-block blue">
+      <div class="tl-left"><div class="tl-age">18–20<span>ans</span></div><div class="tl-content"><h2 class="tl-title">Le commencement</h2><p>J'ai débuté mon parcours d'études à l'École Supérieure de Sup de Pub, où j'ai pu acquérir les bases essentielles du marketing et de la communication. Dès ma deuxième année, j'ai intégré l'équipe de Captain Skipper, une plateforme de location de bateaux entre particuliers.</p></div></div>
+      <div class="tl-photos"><div class="tl-photo"><div class="ph-img"></div></div><div class="tl-photo tall"><div class="ph-img"></div></div><div class="tl-photo"><div class="ph-img"></div></div></div>
+    </div>
+    <div class="timeline-block blue">
+      <div class="tl-left"><div class="tl-age">20–21<span>ans</span></div><div class="tl-content"><h2 class="tl-title">L'opportunité d'une vie</h2><p>En 2023, j'ai été sélectionné pour un stage de six mois chez Brut.IA — la branche IA du média international Brut. Journaliste et créateur de contenu au quotidien : trouver un sujet, écrire le script, monter la vidéo, publier. J'ai couvert VivaTech, interviewé J Balvin, réalisé des vidéos dépassant le million de vues.</p></div></div>
+      <div class="tl-photos"><div class="tl-photo wide"><div class="ph-img"></div></div><div class="tl-photo"><div class="ph-img"></div></div><div class="tl-photo"><div class="ph-img"></div></div><div class="tl-photo"><div class="ph-img"></div></div></div>
+    </div>
+    <div class="timeline-block blue">
+      <div class="tl-left"><div class="tl-age">21–23<span>ans</span></div><div class="tl-content"><h2 class="tl-title">Le lion qui rugit</h2><p>Créateur de contenu chez Publicis Sport. Gestion de Société Générale pour le rugby (équipe de France, TOP 14), allers-retours à Marcoussis, matchs partout en France. Football2gether à l'approche de la CAN, une semaine en Égypte pour la finale de la Ligue des champions africaine.</p></div></div>
+      <div class="tl-photos"><div class="tl-photo"><div class="ph-img"></div></div><div class="tl-photo tall"><div class="ph-img"></div></div><div class="tl-photo wide"><div class="ph-img"></div></div><div class="tl-photo"><div class="ph-img"></div></div></div>
+    </div>
+    <div class="timeline-block orange">
+      <div class="tl-left"><div class="tl-age">L'avenir</div><div class="tl-content"><h2 class="tl-title">Le projet d'une vie...</h2><p>Après le diplôme : une année pour développer Madi3ch (« ne gaspille pas » en arabe), une application anti-gaspillage inspirée de Too Good To Go, destinée au Maroc.</p></div></div>
+      <div class="tl-photos"><div class="tl-photo wide"><div class="ph-img orange-ph"></div></div><div class="tl-photo"><div class="ph-img orange-ph"></div></div></div>
+    </div>
+  </section>
   <script src="main.js"></script>
 </body>
 </html>
