@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes projets — Jad</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" rel="stylesheet" />
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+</head>
+<body class="page-projects">
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">JAD.</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">Qui suis-je ?</a></li>
+      <li><a href="projects.html" class="active">Mes projets</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- VIDEO BG -->
+  <div class="projects-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/projects-reel.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay dark"></div>
+  </div>
+
+  <section class="projects-hero">
+    <h1 class="projects-big-title">Agent<br/><em>Double</em></h1>
+    <p class="projects-sub">Créateur de contenu × UI/UX Designer</p>
+  </section>
+
+  <!-- CARDS -->
+  <section class="projects-grid">
+
+    <article class="project-card glass-card" data-embed="tiktok" data-id="7106594312292453634">
+      <div class="pcard-thumb">
+        <div class="ph-img pcard-ph"></div>
+        <div class="pcard-overlay"></div>
+        <div class="pcard-play-btn"><span>▶</span></div>
+      </div>
+      <div class="pcard-info">
+        <span class="pcard-tag">Journalisme</span>
+        <h2 class="pcard-title">Brut.IA</h2>
+        <p class="pcard-desc">Création de contenu vidéo quotidien. VivaTech, J Balvin, 1M+ vues.</p>
+        <button class="btn-blue small open-embed">Voir ↗</button>
+      </div>
+    </article>
+
+    <article class="project-card glass-card" data-embed="instagram" data-id="C0000000003">
+      <div class="pcard-thumb">
+        <div class="ph-img pcard-ph"></div>
+        <div class="pcard-overlay"></div>
+        <div class="pcard-play-btn"><span>▶</span></div>
+      </div>
+      <div class="pcard-info">
+        <span class="pcard-tag">Sport</span>
+        <h2 class="pcard-title">Publicis Sport</h2>
+        <p class="pcard-desc">Société Générale Rugby, TOP 14, CAN 2025. Football2gether.</p>
+        <button class="btn-blue small open-embed">Voir ↗</button>
+      </div>
+    </article>
+
+    <article class="project-card glass-card" data-embed="tiktok" data-id="6950501452922954501">
+      <div class="pcard-thumb">
+        <div class="ph-img pcard-ph"></div>
+        <div class="pcard-overlay"></div>
+        <div class="pcard-play-btn"><span>▶</span></div>
+      </div>
+      <div class="pcard-info">
+        <span class="pcard-tag">Branding</span>
+        <h2 class="pcard-title">Captain Skipper</h2>
+        <p class="pcard-desc">Direction Artistique — Salon Nautique de Paris.</p>
+        <button class="btn-blue small open-embed">Voir ↗</button>
+      </div>
+    </article>
+
+    <article class="project-card glass-card orange-card" data-embed="desc">
+      <div class="pcard-thumb madi3ch-thumb">
+        <div class="madi3ch-logo-wrap">
+          <span class="madi3ch-logo">Madi3ch</span>
+          <span class="madi3ch-subtitle">مادي أش</span>
+        </div>
+        <div class="pcard-overlay orange-overlay"></div>
+      </div>
+      <div class="pcard-info">
+        <span class="pcard-tag orange-tag">Startup · Maroc</span>
+        <h2 class="pcard-title">Madi3ch</h2>
+        <p class="pcard-desc">Application mobile anti-gaspillage alimentaire inspirée de Too Good To Go, conçue pour le marché marocain.</p>
+        <div class="madi3ch-tags">
+          <span class="badge">UI/UX Design</span>
+          <span class="badge">Branding</span>
+          <span class="badge">Motion</span>
+          <span class="badge">Stratégie</span>
+        </div>
+        <button class="btn-orange small open-embed">Découvrir ↗</button>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- MODAL EMBED -->
+  <div class="embed-modal" id="embedModal">
+    <div class="embed-modal-backdrop" id="embedBackdrop"></div>
+    <div class="embed-modal-box glass-modal">
+      <button class="embed-close" id="embedClose">✕</button>
+      <div class="embed-content" id="embedContent"></div>
+    </div>
+  </div>
+
+  <!-- MODAL MADI3CH -->
+  <div class="embed-modal" id="madi3chModal">
+    <div class="embed-modal-backdrop" id="madi3chBackdrop"></div>
+    <div class="embed-modal-box glass-modal madi3ch-modal">
+      <button class="embed-close" id="madi3chClose">✕</button>
+      <div class="madi3ch-modal-content">
+        <div class="madi3ch-modal-header">
+          <span class="madi3ch-logo large">Madi3ch</span>
+          <span class="madi3ch-subtitle large">مادي أش</span>
+        </div>
+        <div class="madi3ch-modal-body">
+          <div class="madi3ch-col">
+            <h3>Le projet</h3>
+            <p>Madi3ch (مادي أش — « C'est pas grave ») est une application mobile anti-gaspillage alimentaire pensée pour le marché marocain. Elle met en relation les restaurants, boulangeries et épiceries avec des consommateurs souhaitant acheter des invendus à prix réduit.</p>
+          </div>
+          <div class="madi3ch-col">
+            <h3>Mon rôle</h3>
+            <ul class="madi3ch-list">
+              <li>🎨 Direction artistique & Branding complet</li>
+              <li>📱 Design UI/UX de l'application (Figma)</li>
+              <li>🎬 Production des contenus vidéo et motion design</li>
+              <li>📣 Stratégie de lancement réseaux sociaux</li>
+              <li>🇲🇦 Adaptation culturelle marché marocain</li>
+            </ul>
+            <div class="madi3ch-stats">
+              <div class="stat-pill"><span class="stat-num">12</span><span class="stat-label">Semaines</span></div>
+              <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">Plateformes</span></div>
+              <div class="stat-pill orange-pill"><span class="stat-num">1</span><span class="stat-label">Startup</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
