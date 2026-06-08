@@ -3582,3 +3582,405 @@ select {
     font-size: clamp(3.4rem, 15vw, 6.2rem);
   }
 }
+/* =========================================================
+   HOME HERO WALL — RESPONSIVE / REACTIVE UPGRADE
+   ========================================================= */
+
+.home-content-wall {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(255, 255, 255, 0.12), transparent 28rem),
+    radial-gradient(circle at 18% 20%, rgba(54, 112, 255, 0.18), transparent 34rem),
+    radial-gradient(circle at 80% 80%, rgba(255, 79, 18, 0.16), transparent 30rem),
+    #050505;
+}
+
+.home-wall-bg {
+  position: absolute;
+  inset: -8vh -8vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.8rem, 2vh, 1.3rem);
+  transform: rotate(-8deg) scale(1.08);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.home-wall-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.5vw, 1.4rem);
+  min-width: 120vw;
+  transform-style: preserve-3d;
+}
+
+.home-wall-row-two {
+  margin-left: -8vw;
+}
+
+.home-wall-row-three {
+  margin-left: 4vw;
+}
+
+.home-wall-card {
+  position: relative;
+  flex: 0 0 clamp(150px, 14vw, 240px);
+  height: clamp(190px, 18vw, 300px);
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.6vw, 1.8rem);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transform-style: preserve-3d;
+  transform: perspective(900px);
+  will-change: transform;
+}
+
+.home-wall-card.tall {
+  height: clamp(230px, 24vw, 390px);
+}
+
+.home-wall-card.wide {
+  flex-basis: clamp(230px, 24vw, 390px);
+}
+
+.home-wall-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  background:
+    radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.34), transparent 32%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08), transparent 42%, rgba(0, 0, 0, 0.34));
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.home-wall-card:hover::before {
+  opacity: 0.75;
+}
+
+.home-wall-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  scale: 1.08;
+  opacity: 0;
+  filter: saturate(0.9) contrast(1.08) brightness(0.82);
+  transition:
+    opacity 0.5s ease,
+    filter 0.35s ease,
+    scale 0.5s ease;
+  will-change: transform;
+}
+
+.home-wall-card img.is-loaded {
+  opacity: 1;
+}
+
+.home-wall-card:hover img {
+  scale: 1.13;
+  filter: saturate(1.08) contrast(1.12) brightness(0.96);
+}
+
+.home-wall-card img.is-error {
+  opacity: 0.28;
+  filter: grayscale(1);
+}
+
+.home-wall-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(5, 5, 5, 0.18), rgba(5, 5, 5, 0.72) 58%, rgba(5, 5, 5, 0.94) 100%),
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.55), transparent 32%, rgba(5, 5, 5, 0.82));
+}
+
+.home-wall-title-wrap {
+  position: relative;
+  z-index: 3;
+  min-height: 100svh;
+  width: min(92vw, 1120px);
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: #fff;
+  padding: clamp(7rem, 12vh, 10rem) 1rem clamp(4rem, 8vh, 7rem);
+  will-change: transform;
+}
+
+.home-wall-kicker {
+  margin: 0 auto 1rem;
+  width: fit-content;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.home-wall-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.02em;
+  font-size: clamp(3.1rem, 11vw, 10.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.085em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.home-wall-title span {
+  display: block;
+  text-wrap: balance;
+}
+
+.home-wall-script {
+  font-size: 0.38em;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  text-transform: none;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.home-wall-subtitle {
+  max-width: 680px;
+  margin: clamp(1.2rem, 2.5vw, 2rem) auto 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1rem, 1.65vw, 1.35rem);
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.home-wall-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.home-wall-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+  color: #050505;
+  background: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.home-wall-cta:hover {
+  transform: translateY(-2px);
+}
+
+.home-wall-cta.secondary {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.home-wall-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.home-wall-scroll-indicator {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: clamp(1.2rem, 3vh, 2rem);
+  width: 1px;
+  height: 56px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.home-wall-scroll-indicator span {
+  display: block;
+  width: 100%;
+  height: 45%;
+  background: #fff;
+  animation: homeWallScrollIndicator 1.45s ease-in-out infinite;
+}
+
+@keyframes homeWallScrollIndicator {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  100% {
+    transform: translateY(240%);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-wall-bg {
+    inset: -6vh -26vw;
+    transform: rotate(-8deg) scale(1.04);
+  }
+
+  .home-wall-row {
+    min-width: 145vw;
+  }
+
+  .home-wall-card {
+    flex-basis: clamp(130px, 20vw, 190px);
+    height: clamp(165px, 25vw, 260px);
+  }
+
+  .home-wall-card.tall {
+    height: clamp(205px, 32vw, 330px);
+  }
+
+  .home-wall-card.wide {
+    flex-basis: clamp(200px, 34vw, 330px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-content-wall {
+    min-height: 100svh;
+  }
+
+  .home-wall-bg {
+    inset: -3vh -70vw;
+    gap: 0.65rem;
+    transform: rotate(-10deg) scale(1.02);
+    opacity: 0.75;
+  }
+
+  .home-wall-row {
+    min-width: 220vw;
+    gap: 0.65rem;
+  }
+
+  .home-wall-row-two {
+    margin-left: -24vw;
+  }
+
+  .home-wall-row-three {
+    margin-left: 12vw;
+  }
+
+  .home-wall-card {
+    flex-basis: clamp(112px, 34vw, 148px);
+    height: clamp(145px, 42vw, 190px);
+    border-radius: 1rem;
+  }
+
+  .home-wall-card.tall {
+    height: clamp(175px, 54vw, 230px);
+  }
+
+  .home-wall-card.wide {
+    flex-basis: clamp(170px, 52vw, 230px);
+  }
+
+  .home-wall-overlay {
+    background:
+      radial-gradient(circle at center, rgba(5, 5, 5, 0.28), rgba(5, 5, 5, 0.8) 60%, rgba(5, 5, 5, 0.96) 100%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.6), transparent 32%, rgba(5, 5, 5, 0.88));
+  }
+
+  .home-wall-title-wrap {
+    width: min(94vw, 620px);
+    padding-inline: 1rem;
+  }
+
+  .home-wall-title {
+    font-size: clamp(3rem, 17vw, 5.8rem);
+    line-height: 0.86;
+    letter-spacing: -0.075em;
+  }
+
+  .home-wall-subtitle {
+    max-width: 31rem;
+    font-size: 1rem;
+  }
+
+  .home-wall-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 320px);
+    margin-inline: auto;
+  }
+
+  .home-wall-cta {
+    width: 100%;
+  }
+
+  .home-wall-scroll-indicator {
+    height: 42px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .home-wall-title {
+    font-size: clamp(2.75rem, 18vw, 4.4rem);
+  }
+
+  .home-wall-kicker {
+    font-size: 0.66rem;
+  }
+
+  .home-wall-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home-wall-card,
+  .home-wall-card img,
+  .home-wall-title-wrap,
+  .home-wall-row,
+  .home-wall-scroll-indicator span {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .home-wall-card img {
+    opacity: 1;
+  }
+
+  .home-wall-scroll-indicator {
+    display: none;
+  }
+}
