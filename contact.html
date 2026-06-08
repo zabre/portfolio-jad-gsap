@@ -110,54 +110,104 @@
             <h2>Parle-moi du projet</h2>
           </div>
 
-          <form class="contact-form" id="contactForm">
-            <div class="form-grid">
-              <label class="form-field">
-                <span>Ton nom</span>
-                <input type="text" name="name" placeholder="Ex : Sarah, Karim, agence..." required />
-              </label>
+          <form 
+  class="contact-form" 
+  id="contactForm"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
+  <input type="hidden" name="form-name" value="contact" />
 
-              <label class="form-field">
-                <span>Email</span>
-                <input type="email" name="email" placeholder="ton@email.com" required />
-              </label>
-            </div>
+  <p class="hidden">
+    <label>
+      Ne pas remplir ce champ :
+      <input name="bot-field" />
+    </label>
+  </p>
 
-            <label class="form-field">
-              <span>Type de projet</span>
-              <select name="projectType" required>
-                <option value="">Choisir une option</option>
-                <option value="content">Création de contenu</option>
-                <option value="brand">Brand content</option>
-                <option value="uiux">UI/UX Design</option>
-                <option value="branding">Branding</option>
-                <option value="startup">Projet startup</option>
-                <option value="other">Autre</option>
-              </select>
-            </label>
+  <div class="form-row">
+    <label for="name">Nom</label>
+    <input 
+      id="name"
+      type="text" 
+      name="name" 
+      placeholder="Ton nom" 
+      required
+      autocomplete="name"
+    />
+  </div>
 
-            <label class="form-field">
-              <span>Message</span>
-              <textarea
-                name="message"
-                rows="7"
-                placeholder="Décris le contexte, l’objectif, la deadline, les livrables attendus..."
-                required
-              ></textarea>
-            </label>
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input 
+      id="email"
+      type="email" 
+      name="email" 
+      placeholder="ton@email.com" 
+      required
+      autocomplete="email"
+    />
+  </div>
 
-            <div class="contact-form-footer">
-              <button type="submit" class="contact-submit gsap-magnet">
-                Envoyer le brief ↗
-              </button>
+  <div class="form-row">
+    <label for="project-type">Type de projet</label>
+    <select id="project-type" name="project_type" required>
+      <option value="">Sélectionne une option</option>
+      <option value="creation-contenu">Création de contenu</option>
+      <option value="brand-content">Brand content</option>
+      <option value="ux-ui">UX/UI Design</option>
+      <option value="direction-artistique">Direction artistique</option>
+      <option value="collaboration">Collaboration</option>
+      <option value="autre">Autre</option>
+    </select>
+  </div>
 
-              <p class="contact-form-note">
-                Mock-up pour l’instant. À connecter ensuite à Netlify Forms ou Formspree.
-              </p>
-            </div>
+  <div class="form-row">
+    <label for="budget">Budget</label>
+    <select id="budget" name="budget">
+      <option value="">Budget approximatif</option>
+      <option value="moins-1000">Moins de 1 000 €</option>
+      <option value="1000-3000">1 000 — 3 000 €</option>
+      <option value="3000-5000">3 000 — 5 000 €</option>
+      <option value="5000-plus">5 000 € +</option>
+      <option value="a-definir">À définir</option>
+    </select>
+  </div>
 
-            <p class="contact-form-status" id="contactFormStatus" aria-live="polite"></p>
-          </form>
+  <div class="form-row">
+    <label for="timeline">Timing</label>
+    <select id="timeline" name="timeline">
+      <option value="">Timing du projet</option>
+      <option value="urgent">Urgent</option>
+      <option value="1-mois">Dans le mois</option>
+      <option value="1-3-mois">1 à 3 mois</option>
+      <option value="plus-tard">Plus tard</option>
+      <option value="a-definir">À définir</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="message">Message</label>
+    <textarea 
+      id="message"
+      name="message" 
+      rows="6" 
+      placeholder="Parle-moi du projet, de l’objectif, du contexte..."
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="form-submit">
+    Envoyer le brief ↗
+  </button>
+
+  <p class="form-note">
+    Réponse sous 24–48h selon disponibilité.
+  </p>
+</form>
         </section>
 
       </div>
