@@ -3,49 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Me contacter — Jad</title>
+  <meta name="description" content="Contacter Jad pour une collaboration, un projet social media, contenu, branding ou UI/UX." />
+
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
+
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Script global -->
+  <script defer src="main.js"></script>
+
+  <!-- Script contact dédié -->
+  <script defer src="contact.js"></script>
 </head>
-<body class="page-contact">
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+<body class="contact-page">
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">JAD.</a>
 
-      <nav class="navbar" id="navbar">
-        <div class="nav-logo" id="navLogo">JAD.</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">Qui suis-je ?</a></li>
-          <li><a href="projects.html">Mes projets</a></li>
-          <li><a href="contact.html" class="active">Me contacter</a></li>
-        </ul>
-      </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">Qui suis-je ?</a></li>
+      <li><a href="projects.html">Mes projets</a></li>
+      <li><a href="contact.html" class="active">Me contacter</a></li>
+    </ul>
+  </nav>
 
-      <div class="contact-bg">
-        <div class="contact-bg-blob blob1"></div>
-        <div class="contact-bg-blob blob2"></div>
-        <div class="contact-bg-blob blob3"></div>
+  <main>
+
+    <!-- HERO CONTACT -->
+    <section class="contact-hero">
+      <div class="contact-hero-bg">
+        <span class="contact-orb contact-orb-one"></span>
+        <span class="contact-orb contact-orb-two"></span>
+        <span class="contact-grid-bg"></span>
       </div>
 
-      <main class="contact-main">
-        <div class="contact-header">
-          <span class="contact-eyebrow">Travaillons ensemble</span>
-          <h1 class="contact-title">Me<br/><em>contacter</em></h1>
-          <p class="contact-intro">Tu as un projet, une idée, une collab ? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
+      <div class="contact-hero-inner">
+        <p class="page-eyebrow">Disponible pour collaborations sélectionnées</p>
 
-        <div class="contact-grid">
-          <div class="contact-form-wrap glass-panel">
-            <form class="contact-form" id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">Prénom</label>
-     
+        <h1 class="contact-title">
+          On crée<br />
+          quelque chose<br />
+          qui marque ?
+        </h1>
+
+        <p class="contact-intro">
+          Contenu social media, brand content, direction artistique, UI/UX ou projet entrepreneurial.
+          Écris-moi avec ton idée, ton timing et l’ambition du projet.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="contact-section">
+
+      <div class="contact-layout">
+
+        <!-- LEFT PANEL -->
+        <aside class="contact-panel contact-info-panel">
+          <p class="contact-panel-kicker">Contact direct</p>
+
+          <div class="contact-main-card">
+            <span class="contact-avatar">J</span>
+
+            <div>
+              <h2>Jad</h2>
+              <p>Creator de contenu · UI/UX · Branding</p>
+            </div>
+          </div>
+
+          <div class="contact-methods">
+
+            <a href="mailto:hello@jad-portfolio.com" class="contact-method gsap-magnet">
+              <span class="contact-method-label">Email</span>
+              <strong>hello@jad-portfolio.com</strong>
+              <small>À remplacer avec le bon email</small>
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-method gsap-magnet">
+              <span class="contact-method-label">LinkedIn</span>
+              <strong>/in/jad</strong>
+              <small>Profil professionnel</small>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="contact-method gsap-magnet">
+              <span class="contact-method-label">Instagram</span>
+              <strong>@jad.content</strong>
+              <small>Créations & coulisses</small>
+            </a>
+
+          </div>
+
+          <div class="contact-availability">
+            <span class="availability-dot"></span>
+            <p>
+              Disponible pour missions freelance, alternance, collaborations marque
+              et projets créatifs ambitieux.
+            </p>
+          </div>
+        </aside>
+
+        <!-- RIGHT PANEL FORM -->
+        <section class="contact-panel contact-form-panel">
+          <div class="contact-form-header">
+            <p class="contact-panel-kicker">Brief rapide</p>
+            <h2>Parle-moi du projet</h2>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Ton nom</span>
+                <input type="text" name="name" placeholder="Ex : Sarah, Karim, agence..." required />
+              </label>
+
+              <label class="form-field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="ton@email.com" required />
+              </label>
+            </div>
+
+            <label class="form-field">
+              <span>Type de projet</span>
+              <select name="projectType" required>
+                <option value="">Choisir une option</option>
+                <option value="content">Création de contenu</option>
+                <option value="brand">Brand content</option>
+                <option value="uiux">UI/UX Design</option>
+                <option value="branding">Branding</option>
+                <option value="startup">Projet startup</option>
+                <option value="other">Autre</option>
+              </select>
+            </label>
+
+            <label class="form-field">
+              <span>Message</span>
+              <textarea
+                name="message"
+                rows="7"
+                placeholder="Décris le contexte, l’objectif, la deadline, les livrables attendus..."
+                required
+              ></textarea>
+            </label>
+
+            <div class="contact-form-footer">
+              <button type="submit" class="contact-submit gsap-magnet">
+                Envoyer le brief ↗
+              </button>
+
+              <p class="contact-form-note">
+                Mock-up pour l’instant. À connecter ensuite à Netlify Forms ou Formspree.
+              </p>
+            </div>
+
+            <p class="contact-form-status" id="contactFormStatus" aria-live="polite"></p>
+          </form>
+        </section>
+
+      </div>
+
+    </section>
+
+    <!-- SOCIAL STRIP -->
+    <section class="contact-social-strip">
+      <a href="projects.html" class="social-strip-item">
+        <span>Voir les projets</span>
+        <strong>Portfolio ↗</strong>
+      </a>
+
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-strip-item">
+        <span>Suivre les contenus</span>
+        <strong>Instagram ↗</strong>
+      </a>
+
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-strip-item">
+        <span>Échanger pro</span>
+        <strong>LinkedIn ↗</strong>
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>
