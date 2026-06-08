@@ -3,165 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Mes projets — Jad</title>
+  <meta name="description" content="Portfolio animé de Jad — projets contenu, social media, sport, branding et UI/UX." />
+
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollSmoother.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/Flip.min.js"></script>
+
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Script global du site -->
+  <script defer src="main.js"></script>
+
+  <!-- Script dédié à la page projets / embeds -->
+  <script defer src="projects-embeds.js"></script>
 </head>
-<body class="page-projects">
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+<body class="projects-page">
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">JAD.</a>
 
-      <nav class="navbar" id="navbar">
-        <div class="nav-logo" id="navLogo">JAD.</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">Qui suis-je ?</a></li>
-          <li><a href="projects.html" class="active">Mes projets</a></li>
-          <li><a href="contact.html">Me contacter</a></li>
-        </ul>
-      </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">Qui suis-je ?</a></li>
+      <li><a href="projects.html" class="active">Mes projets</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
 
-      <div class="projects-video-wrap">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="assets/projects-reel.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-overlay dark"></div>
+  <!-- HEADER -->
+  <main>
+    <section class="projects-hero">
+      <div class="projects-hero-inner">
+        <p class="page-eyebrow">Portfolio contenu · social media · sport · branding</p>
+
+        <h1 class="projects-big-title">
+          Agent<br />
+          Double
+        </h1>
+
+        <p class="projects-intro">
+          Créateur de contenu × UI/UX Designer. Une sélection de projets pensés pour les marques,
+          les réseaux sociaux et les expériences digitales.
+        </p>
       </div>
+    </section>
 
-      <section class="projects-hero">
-        <h1 class="projects-big-title">Agent<br/><em>Double</em></h1>
-        <p class="projects-sub">Créateur de contenu × UI/UX Designer</p>
-      </section>
+    <!-- PROJECTS GRID -->
+    <section class="projects-section">
+      <div class="projects-grid">
 
-      <!-- Horizontal scroll wrapper -->
-      <div class="projects-hscroll-wrap" id="projectsHScrollWrap">
-        <section class="projects-grid" id="projectsGrid">
-
-          <article class="project-card glass-card" data-embed="tiktok" data-id="7106594312292453634">
-            <div class="pcard-thumb">
-              <div class="ph-img pcard-ph"></div>
-              <div class="pcard-overlay"></div>
-              <div class="pcard-play-btn"><span>▶</span></div>
-            </div>
-            <div class="pcard-info">
-              <span class="pcard-tag">Journalisme</span>
-              <h2 class="pcard-title">Brut.IA</h2>
-              <p class="pcard-desc">Création de contenu vidéo quotidien. VivaTech, J Balvin, 1M+ vues.</p>
-              <button class="btn-blue small open-embed">Voir ↗</button>
-            </div>
-          </article>
-
-          <article class="project-card glass-card" data-embed="instagram" data-id="C0000000003">
-            <div class="pcard-thumb">
-              <div class="ph-img pcard-ph"></div>
-              <div class="pcard-overlay"></div>
-              <div class="pcard-play-btn"><span>▶</span></div>
-            </div>
-            <div class="pcard-info">
-              <span class="pcard-tag">Sport</span>
-              <h2 class="pcard-title">Publicis Sport</h2>
-              <p class="pcard-desc">Société Générale Rugby, TOP 14, CAN 2025. Football2gether.</p>
-              <button class="btn-blue small open-embed">Voir ↗</button>
-            </div>
-          </article>
-
-          <article class="project-card glass-card" data-embed="tiktok" data-id="6950501452922954501">
-            <div class="pcard-thumb">
-              <div class="ph-img pcard-ph"></div>
-              <div class="pcard-overlay"></div>
-              <div class="pcard-play-btn"><span>▶</span></div>
-            </div>
-            <div class="pcard-info">
-              <span class="pcard-tag">Branding</span>
-              <h2 class="pcard-title">Captain Skipper</h2>
-              <p class="pcard-desc">Direction Artistique — Salon Nautique de Paris.</p>
-              <button class="btn-blue small open-embed">Voir ↗</button>
-            </div>
-          </article>
-
-          <article class="project-card glass-card orange-card" data-embed="desc">
-            <div class="pcard-thumb madi3ch-thumb">
-              <div class="madi3ch-logo-wrap">
-                <span class="madi3ch-logo">Madi3ch</span>
-                <span class="madi3ch-subtitle">مادي أش</span>
-              </div>
-              <div class="pcard-overlay orange-overlay"></div>
-            </div>
-            <div class="pcard-info">
-              <span class="pcard-tag orange-tag">Startup · Maroc</span>
-              <h2 class="pcard-title">Madi3ch</h2>
-              <p class="pcard-desc">Application mobile anti-gaspillage alimentaire inspirée de Too Good To Go, conçue pour le marché marocain.</p>
-              <div class="madi3ch-tags">
-                <span class="badge">UI/UX Design</span>
-                <span class="badge">Branding</span>
-                <span class="badge">Motion</span>
-                <span class="badge">Stratégie</span>
-              </div>
-              <button class="btn-orange small open-embed">Découvrir ↗</button>
-            </div>
-          </article>
-
-        </section>
-      </div><!-- /hscroll-wrap -->
-
-      <!-- MODAL EMBED -->
-      <div class="embed-modal" id="embedModal">
-        <div class="embed-modal-backdrop" id="embedBackdrop"></div>
-        <div class="embed-modal-box glass-modal">
-          <button class="embed-close" id="embedClose">✕</button>
-          <div class="embed-content" id="embedContent"></div>
-        </div>
-      </div>
-
-      <!-- MODAL MADI3CH -->
-      <div class="embed-modal" id="madi3chModal">
-        <div class="embed-modal-backdrop" id="madi3chBackdrop"></div>
-        <div class="embed-modal-box glass-modal madi3ch-modal">
-          <button class="embed-close" id="madi3chClose">✕</button>
-          <div class="madi3ch-modal-content">
-            <div class="madi3ch-modal-header">
-              <span class="madi3ch-logo large">Madi3ch</span>
-              <span class="madi3ch-subtitle large">مادي أش</span>
-            </div>
-            <div class="madi3ch-modal-body">
-              <div class="madi3ch-col">
-                <h3>Le projet</h3>
-                <p>Madi3ch (مادي أش — « C'est pas grave ») est une application mobile anti-gaspillage alimentaire pensée pour le marché marocain.</p>
-              </div>
-              <div class="madi3ch-col">
-                <h3>Mon rôle</h3>
-                <ul class="madi3ch-list">
-                  <li>🎨 Direction artistique & Branding complet</li>
-                  <li>📱 Design UI/UX de l'application (Figma)</li>
-                  <li>🎬 Production des contenus vidéo et motion design</li>
-                  <li>📣 Stratégie de lancement réseaux sociaux</li>
-                  <li>🇲🇦 Adaptation culturelle marché marocain</li>
-                </ul>
-                <div class="madi3ch-stats">
-                  <div class="stat-pill"><span class="stat-num">12</span><span class="stat-label">Semaines</span></div>
-                  <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">Plateformes</span></div>
-                  <div class="stat-pill orange-pill"><span class="stat-num">1</span><span class="stat-label">Startup</span></div>
-                </div>
-              </div>
-            </div>
+        <!-- BRUT IA -->
+        <article
+          class="project-card project-card-featured"
+          data-project-title="Brut.IA"
+          data-project-category="Journalisme · IA · Social content"
+          data-embed-list="brut-ia"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
           </div>
-        </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Journalisme</p>
+            <h2>Brut.IA</h2>
+            <p>
+              Création de contenu vidéo quotidien autour de l’intelligence artificielle,
+              VivaTech, culture digitale et formats sociaux.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir les contenus ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- SOCIETE GENERALE -->
+        <article
+          class="project-card"
+          data-project-title="Société Générale"
+          data-project-category="Sport · Rugby · Social content"
+          data-embed-list="societe-generale"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Sport</p>
+            <h2>Société Générale</h2>
+            <p>
+              Contenus social media autour du rugby, de la marque et de l’activation sportive.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir les contenus ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- TOTAL ENERGIES -->
+        <article
+          class="project-card"
+          data-project-title="TotalEnergies"
+          data-project-category="Sport · Activation · Social content"
+          data-embed-list="total-energies"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Activation</p>
+            <h2>TotalEnergies</h2>
+            <p>
+              Série de contenus courts pour les réseaux sociaux, autour d’univers sportifs
+              et de moments événementiels.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir les contenus ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- PUBLICIS SPORT -->
+        <article
+          class="project-card"
+          data-project-title="Publicis Sport"
+          data-project-category="Sport · Football · Rugby"
+          data-embed-list="publicis-sport"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Sport</p>
+            <h2>Publicis Sport</h2>
+            <p>
+              Contenus pour des activations sportives, football, rugby et événements de marque.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir les contenus ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- SANOFI -->
+        <article
+          class="project-card"
+          data-project-title="Sanofi"
+          data-project-category="Corporate · Social content"
+          data-embed-list="sanofi"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Corporate</p>
+            <h2>Sanofi</h2>
+            <p>
+              Contenus social media pour valoriser des prises de parole, formats verticaux
+              et capsules de communication.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir les contenus ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- AXA X LIVERPOOL -->
+        <article
+          class="project-card"
+          data-project-title="AXA × Liverpool"
+          data-project-category="Brand content · YouTube"
+          data-embed-list="axa-liverpool"
+        >
+          <div class="project-card-media">
+            <span class="project-play">▶</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Brand content</p>
+            <h2>AXA × Liverpool</h2>
+            <p>
+              Contenu vidéo YouTube autour d’une collaboration marque × football.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Voir la vidéo ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- CAPTAIN SKIPPER -->
+        <article
+          class="project-card project-card-text"
+          data-project-title="Captain Skipper"
+          data-project-category="Branding · Direction artistique"
+          data-embed-list="captain-skipper"
+        >
+          <div class="project-card-media">
+            <span class="project-play">✦</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Branding</p>
+            <h2>Captain Skipper</h2>
+            <p>
+              Direction artistique, univers visuel et accompagnement autour du Salon Nautique de Paris.
+            </p>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Découvrir ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- MADI3CH -->
+        <article
+          class="project-card project-card-text project-card-featured"
+          data-project-title="Madi3ch مادي أش"
+          data-project-category="Startup · Maroc · UI/UX"
+          data-embed-list="madi3ch"
+        >
+          <div class="project-card-media madi3ch-media">
+            <span class="madi3ch-logo">Madi3ch<br />مادي أش</span>
+          </div>
+
+          <div class="project-card-content">
+            <p class="project-category">Startup · Maroc</p>
+            <h2>Madi3ch</h2>
+            <p>
+              Application mobile anti-gaspillage alimentaire inspirée de Too Good To Go,
+              conçue pour le marché marocain.
+            </p>
+
+            <div class="project-tags">
+              <span>UI/UX Design</span>
+              <span>Branding</span>
+              <span>Motion</span>
+              <span>Stratégie</span>
+            </div>
+
+            <button class="open-project-embeds gsap-magnet" type="button">
+              Découvrir ↗
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODALE PROJETS / EMBEDS -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+
+    <div class="project-modal-box" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+      <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Fermer la fenêtre">
+        ✕
+      </button>
+
+      <div class="project-modal-header">
+        <p class="project-modal-category" id="projectModalCategory"></p>
+        <h2 id="projectModalTitle"></h2>
       </div>
 
+      <div class="project-modal-body" id="projectModalBody">
+        <!-- Injecté en JS -->
+      </div>
     </div>
   </div>
 
-  <script async src="https://www.tiktok.com/embed.js"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script src="main.js"></script>
 </body>
 </html>
