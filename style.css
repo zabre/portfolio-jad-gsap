@@ -3998,3 +3998,39 @@ select {
 .hidden {
   display: none !important;
 }
+.thank-you-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: #050505;
+  color: #fff;
+}
+
+.thank-you-section {
+  width: min(720px, 100%);
+  text-align: center;
+}
+
+.thank-you-section h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.thank-you-section p {
+  margin: 1.25rem auto 0;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.thank-you-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
