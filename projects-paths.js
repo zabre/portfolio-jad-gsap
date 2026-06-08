@@ -25,7 +25,7 @@
       description:
         "Application ludique conçue pour l’association Fake Off, dédiée à la lutte contre la désinformation. Chaque jour, les utilisateurs découvrent des quiz interactifs pour tester et renforcer leurs réflexes face aux fake news. L’application intègre également une intelligence artificielle capable d’analyser rapidement un article et d’indiquer s’il est fiable ou trompeur.",
       tags: ["Mobile app", "Quiz", "IA", "UX writing", "Citoyenneté"],
-      link: "#"
+      link: "https://www.figma.com/design/k9D2rQKMsPGuE5WMayx2cx/Untitled?t=0jOtHXzl1EWCv2YY-0"
     },
 
     adidas: {
@@ -35,7 +35,7 @@
       description:
         "Refonte de la page d’accueil Adidas pour mettre en avant une collaboration fictive entre Stan Smith et Will Smith. Le projet explore comment valoriser une campagne originale tout en respectant l’identité visuelle forte d’Adidas et les codes d’une expérience e-commerce reconnue.",
       tags: ["Landing page", "E-commerce", "Direction artistique", "Responsive", "Campaign"],
-      link: "#"
+      link: "figma.com/design/ZVLNWEBsvtZCo8YWiqRyCb/Untitled?node-id=0-1"
     },
 
     determines: {
@@ -45,7 +45,7 @@
       description:
         "Création d’un site internet pour Les Déterminés, une association qui accompagne les jeunes entrepreneurs issus de quartiers populaires. Le projet couvre l’architecture du site, la conception des différents onglets et l’optimisation de la fluidité de navigation, afin de proposer une expérience claire et intuitive.",
       tags: ["Site web", "Association", "Architecture information", "Navigation", "Impact"],
-      link: "#"
+      link: "figma.com/design/6qtOn4bBhN5xMNtmKaza3I/APP-FRIEND?node-id=304-818"
     },
 
     redbull: {
@@ -55,7 +55,7 @@
       description:
         "Création de RedBull Club, une application sportive pensée sur mesure pour la marque. L’application propose chaque semaine des activités adaptées aux envies des utilisateurs, permet de suivre leurs progrès et donne accès à des cours en ligne ou en présentiel près de chez eux.",
       tags: ["Mobile app", "Sport", "Gamification", "Abonnement", "Engagement"],
-      link: "#"
+      link: "figma.com/design/6qtOn4bBhN5xMNtmKaza3I/APP-FRIEND?node-id=304-818&t=zHAgu3CRZjzOY4Y3-1&fuid=1195408756869268355"
     },
 
     wingfoil: {
@@ -65,7 +65,7 @@
       description:
         "Refonte complète du site d’une école spécialisée dans l’enseignement du wingfoil. Chaque aspect du site a été repensé pour le rendre plus moderne, plus attractif et surtout plus intuitif pour les utilisateurs. Le projet met en avant la transformation entre l’ancienne version et une nouvelle expérience plus claire.",
       tags: ["Refonte", "Sport", "Webdesign", "Responsive", "Expérience utilisateur"],
-      link: "https://www.wing-and-foil-school.com/"
+      link: "figma.com/design/5oYgJMCRuc8vshJQ87czid/WINGFOIL?node-id=0-1&t=18faAumfYD4sssPd-0"
     }
   };
 
