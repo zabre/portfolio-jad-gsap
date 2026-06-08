@@ -57,41 +57,6 @@
   function initMockForm() {
     if (!form || !status) return;
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      const name = formData.get("name") || "Merci";
-
-      status.textContent = "";
-
-      const button = form.querySelector("button[type='submit']");
-      const originalText = button ? button.textContent : "";
-
-      if (button) {
-        button.disabled = true;
-        button.textContent = "Préparation du message...";
-      }
-
-      window.setTimeout(() => {
-        status.textContent = `${name}, ton brief est prêt. Branche maintenant ce formulaire à Netlify Forms, Formspree ou ton email.`;
-
-        if (button) {
-          button.disabled = false;
-          button.textContent = originalText;
-        }
-
-        form.reset();
-
-        if (window.gsap) {
-          gsap.fromTo(
-            status,
-            { opacity: 0, y: 10 },
-            { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
-          );
-        }
-      }, 700);
-    });
   }
 
   function initInputFocus() {
