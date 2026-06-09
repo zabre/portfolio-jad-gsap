@@ -1,117 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Me contacter — Jad</title>
-  <meta name="description" content="Contacter Jad pour une collaboration, un projet social media, contenu, branding ou UI/UX." />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- GSAP -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Script global -->
-  <script defer src="main.js"></script>
-
-  <!-- Script contact dédié -->
-  <script defer src="contact.js"></script>
-</head>
-
-<body class="contact-page">
-
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <a href="index.html" class="nav-logo">JAD.</a>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">Qui suis-je ?</a></li>
-      <li><a href="projects.html">Mes projets</a></li>
-      <li><a href="contact.html" class="active">Me contacter</a></li>
-    </ul>
-  </nav>
-
-  <main>
-
-    <!-- HERO CONTACT -->
-    <section class="contact-hero">
-      <div class="contact-hero-bg">
-        <span class="contact-orb contact-orb-one"></span>
-        <span class="contact-orb contact-orb-two"></span>
-        <span class="contact-grid-bg"></span>
-      </div>
-
-      <div class="contact-hero-inner">
-        <p class="page-eyebrow">Disponible pour collaborations sélectionnées</p>
-
-        <h1 class="contact-title">
-          On crée<br />
-          quelque chose<br />
-          qui marque ?
-        </h1>
-
-        <p class="contact-intro">
-          Contenu social media, brand content, direction artistique, UI/UX ou projet entrepreneurial.
-          Écris-moi avec ton idée, ton timing et l’ambition du projet.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT CONTENT -->
-    <section class="contact-section">
-
-      <div class="contact-layout">
-
-        <!-- LEFT PANEL -->
-        <aside class="contact-panel contact-info-panel">
-          <p class="contact-panel-kicker">Contact direct</p>
-
-          <div class="contact-main-card">
-            <span class="contact-avatar">J</span>
-
-            <div>
-              <h2>Jad</h2>
-              <p>Creator de contenu · UI/UX · Branding</p>
-            </div>
-          </div>
-
-          <div class="contact-methods">
-
-            <a href="mailto:jad.ouassat@outlook.fr" class="contact-method gsap-magnet">
-              <span class="contact-method-label">Email</span>
-              <strong>jad.ouassat@outlook.fr</strong>
-              <small>Je vous réponds dans les plus brefs délais !</small>
-            </a>
-
-            <a href="https://www.linkedin.com/in/jad-ouassat-a36b42208/" target="_blank" rel="noopener noreferrer" class="contact-method gsap-magnet">
-              <span class="contact-method-label">LinkedIn</span>
-              <strong>/in/jad</strong>
-              <small>Profil professionnel</small>
-            </a>
-
-          </div>
-
-          <div class="contact-availability">
-            <span class="availability-dot"></span>
-            <p>
-              Disponible pour missions freelance, alternance, collaborations marque
-              et projets créatifs ambitieux.
-            </p>
-          </div>
-        </aside>
-
-        <!-- RIGHT PANEL FORM -->
-        <section class="contact-panel contact-form-panel">
-          <div class="contact-form-header">
-            <p class="contact-panel-kicker">Brief rapide</p>
-            <h2>Parle-moi du projet</h2>
-          </div>
-
-          <form 
-  class="contact-form" 
+<form
+  class="brief-form"
   id="contactForm"
   name="contact"
   method="POST"
@@ -121,118 +9,92 @@
 >
   <input type="hidden" name="form-name" value="contact" />
 
-  <p class="hidden">
+  <p class="form-hidden">
     <label>
       Ne pas remplir ce champ :
       <input name="bot-field" />
     </label>
   </p>
 
-  <div class="form-row">
-    <label for="name">Nom</label>
-    <input 
-      id="name"
-      type="text" 
-      name="name" 
-      placeholder="Ton nom" 
-      required
-      autocomplete="name"
-    />
+  <div class="brief-form-grid">
+    <div class="brief-field">
+      <label for="name">Nom</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Ton nom"
+        required
+        autocomplete="name"
+      />
+    </div>
+
+    <div class="brief-field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="ton@email.com"
+        required
+        autocomplete="email"
+      />
+    </div>
+
+    <div class="brief-field">
+      <label for="project-type">Type de projet</label>
+      <select id="project-type" name="project_type" required>
+        <option value="">Sélectionne une option</option>
+        <option value="creation-contenu">Création de contenu</option>
+        <option value="brand-content">Brand content</option>
+        <option value="ux-ui">UX/UI Design</option>
+        <option value="direction-artistique">Direction artistique</option>
+        <option value="collaboration">Collaboration</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
+
+    <div class="brief-field">
+      <label for="budget">Budget</label>
+      <select id="budget" name="budget">
+        <option value="">Budget approximatif</option>
+        <option value="moins-1000">Moins de 1 000 €</option>
+        <option value="1000-3000">1 000 — 3 000 €</option>
+        <option value="3000-5000">3 000 — 5 000 €</option>
+        <option value="5000-plus">5 000 € +</option>
+        <option value="a-definir">À définir</option>
+      </select>
+    </div>
+
+    <div class="brief-field">
+      <label for="timeline">Timing</label>
+      <select id="timeline" name="timeline">
+        <option value="">Timing du projet</option>
+        <option value="urgent">Urgent</option>
+        <option value="1-mois">Dans le mois</option>
+        <option value="1-3-mois">1 à 3 mois</option>
+        <option value="plus-tard">Plus tard</option>
+        <option value="a-definir">À définir</option>
+      </select>
+    </div>
+
+    <div class="brief-field brief-field-message">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Parle-moi du projet, de l’objectif, du contexte..."
+        required
+      ></textarea>
+    </div>
   </div>
 
-  <div class="form-row">
-    <label for="email">Email</label>
-    <input 
-      id="email"
-      type="email" 
-      name="email" 
-      placeholder="ton@email.com" 
-      required
-      autocomplete="email"
-    />
-  </div>
-
-  <div class="form-row">
-    <label for="project-type">Type de projet</label>
-    <select id="project-type" name="project_type" required>
-      <option value="">Sélectionne une option</option>
-      <option value="creation-contenu">Création de contenu</option>
-      <option value="brand-content">Brand content</option>
-      <option value="ux-ui">UX/UI Design</option>
-      <option value="direction-artistique">Direction artistique</option>
-      <option value="collaboration">Collaboration</option>
-      <option value="autre">Autre</option>
-    </select>
-  </div>
-
-  <div class="form-row">
-    <label for="budget">Budget</label>
-    <select id="budget" name="budget">
-      <option value="">Budget approximatif</option>
-      <option value="moins-1000">Moins de 1 000 €</option>
-      <option value="1000-3000">1 000 — 3 000 €</option>
-      <option value="3000-5000">3 000 — 5 000 €</option>
-      <option value="5000-plus">5 000 € +</option>
-      <option value="a-definir">À définir</option>
-    </select>
-  </div>
-
-  <div class="form-row">
-    <label for="timeline">Timing</label>
-    <select id="timeline" name="timeline">
-      <option value="">Timing du projet</option>
-      <option value="urgent">Urgent</option>
-      <option value="1-mois">Dans le mois</option>
-      <option value="1-3-mois">1 à 3 mois</option>
-      <option value="plus-tard">Plus tard</option>
-      <option value="a-definir">À définir</option>
-    </select>
-  </div>
-
-  <div class="form-row">
-    <label for="message">Message</label>
-    <textarea 
-      id="message"
-      name="message" 
-      rows="6" 
-      placeholder="Parle-moi du projet, de l’objectif, du contexte..."
-      required
-    ></textarea>
-  </div>
-
-  <button type="submit" class="form-submit">
+  <button type="submit" class="brief-submit">
     Envoyer le brief ↗
   </button>
 
-  <p class="form-note">
+  <p class="brief-note">
     Réponse sous 24–48h selon disponibilité.
   </p>
 </form>
-        </section>
-
-      </div>
-
-    </section>
-
-    <!-- SOCIAL STRIP -->
-    <section class="contact-social-strip">
-      <a href="projects.html" class="social-strip-item">
-        <span>Voir les projets</span>
-        <strong>Portfolio ↗</strong>
-      </a>
-
-      <a href="https://www.instagram.com/jad.o_a/" target="_blank" rel="noopener noreferrer" class="social-strip-item">
-        <span>Suivre les contenus</span>
-        <strong>Instagram ↗</strong>
-      </a>
-
-      <a href="https://www.linkedin.com/in/jad-ouassat-a36b42208/" target="_blank" rel="noopener noreferrer" class="social-strip-item">
-        <span>Échanger pro</span>
-        <strong>LinkedIn ↗</strong>
-      </a>
-    </section>
-
-  </main>
-
-</body>
-</html>
