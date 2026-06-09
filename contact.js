@@ -1,81 +1,78 @@
 (function () {
   "use strict";
 
-  const form = document.getElementById("contactForm");
-  const status = document.getElementById("contactFormStatus");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function initContactAnimations() {
-    if (!window.gsap) return;
+    if (!window.gsap || prefersReducedMotion) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.out",
+        duration: 0.8,
+      },
+    });
 
-    gsap.from(".contact-title", {
-      y: 80,
+    tl.from(".contact-hero .section-kicker", {
       opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-      delay: 0.15
-    });
-
-    gsap.from(".contact-intro", {
-      y: 28,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      delay: 0.45
-    });
-
-    gsap.from(".contact-panel", {
-      y: 60,
-      opacity: 0,
-      duration: 0.85,
-      ease: "power3.out",
-      stagger: 0.12,
-      delay: 0.35
-    });
-
-    gsap.to(".contact-orb-one", {
-      x: 40,
-      y: -30,
-      duration: 6,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-
-    gsap.to(".contact-orb-two", {
-      x: -35,
-      y: 26,
-      duration: 7,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
+      y: 18,
+    })
+      .from(
+        ".contact-hero h1",
+        {
+          opacity: 0,
+          y: 32,
+        },
+        "-=0.55"
+      )
+      .from(
+        ".contact-hero p",
+        {
+          opacity: 0,
+          y: 24,
+        },
+        "-=0.5"
+      )
+      .from(
+        ".contact-card, .contact-form-panel",
+        {
+          opacity: 0,
+          y: 36,
+          stagger: 0.12,
+        },
+        "-=0.45"
+      );
   }
 
-  function initMockForm() {
-    if (!form || !status) return;
-
-  }
-
-  function initInputFocus() {
-    const fields = document.querySelectorAll(".form-field input, .form-field textarea, .form-field select");
+  function initFormFocusStates() {
+    const fields = document.querySelectorAll(
+      ".brief-field input, .brief-field select, .brief-field textarea"
+    );
 
     fields.forEach((field) => {
       field.addEventListener("focus", () => {
-        field.closest(".form-field")?.classList.add("is-focused");
+        field.closest(".brief-field")?.classList.add("is-focused");
       });
 
       field.addEventListener("blur", () => {
-        field.closest(".form-field")?.classList.remove("is-focused");
+        field.closest(".brief-field")?.classList.remove("is-focused");
       });
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initContactPage() {
     initContactAnimations();
-    initMockForm();
-    initInputFocus();
-  });
+    initFormFocusStates();
+
+    // Important :
+    // On ne bloque PAS le submit.
+    // Pas de event.preventDefault().
+    // Netlify Forms doit recevoir la soumission naturellement.
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactPage);
+  } else {
+    initContactPage();
+  }
 })();
