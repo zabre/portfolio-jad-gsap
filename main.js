@@ -294,38 +294,6 @@ if (contactTitle) {
 }
 
 /* ============================================
-   15. FORMULAIRE — FEEDBACK ANIMÉ
-============================================ */
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  const submitBtn = contactForm.querySelector('.contact-submit');
-  const successMsg = document.getElementById('formSuccess');
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const tl = gsap.timeline();
-    tl.to(submitBtn, { scale: 0.94, duration: 0.1 })
-      .to(submitBtn, { scale: 1, backgroundColor: '#16a34a', duration: 0.4, ease: 'back.out(2)' })
-      .to(submitBtn, { opacity: 0, y: -20, duration: 0.35 }, '+=0.8')
-      .call(() => {
-        submitBtn.style.display = 'none';
-        if (successMsg) {
-          successMsg.style.display = 'flex';
-          gsap.from(successMsg, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' });
-        }
-      })
-      .call(() => {
-        setTimeout(() => {
-          submitBtn.style.display = '';
-          submitBtn.style.backgroundColor = '';
-          gsap.to(submitBtn, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
-          if (successMsg) successMsg.style.display = 'none';
-          contactForm.reset();
-        }, 3500);
-      }, null, '+=0.1');
-  });
-}
-
-/* ============================================
    16. MODALES — ANIMATION GSAP
 ============================================ */
 const embedModal      = document.getElementById('embedModal');
