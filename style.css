@@ -4889,3 +4889,16 @@ body.page-contact {
   transform: scale(1.1);
   filter: saturate(1.1) contrast(1.05);
 }
+/* Cacher le badge identité sur la page Qui suis-je */
+.about-identity-card {
+  display: none !important;
+}
+
+/* Rééquilibrer le hero après suppression du badge */
+.about-hero-inner {
+  grid-template-columns: 1fr !important;
+}
+
+.about-hero-copy {
+  max-width: 1100px;
+}
